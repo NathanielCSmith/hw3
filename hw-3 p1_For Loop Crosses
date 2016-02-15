@@ -1,0 +1,37 @@
+int hi = 10;
+int border =15;
+
+void setup() {
+  size(700, 700);
+  background(255);
+  stroke(0);
+  strokeWeight(1.15);
+  frameRate(5);
+
+  //change the x coordinate
+  for (int i=0; i<20; i++) { //for (start, stop; step)
+    int x = (i*34);// removed border +
+    //change the y coordinate
+    for (int j=0; j<20; j++) {
+      int y = (j*34);// removed border +
+      line(x+10+border, y+border, x+10+border, y+20+border); 
+      line(x+border, y+10+border, x+20+border, y+10+border);
+      //for the line calls-this part was confusing as fuck. 
+      //I realized I had to add border to each coord then I had 
+      //to tweak the canvas size to get it to work right
+    }
+  }
+}
+
+//this was the struggle and the orginal math
+//void draw() {
+//  //This is to draw top to vertical
+//  for(int i=1;i<25;i++) {
+//    line(10, 0, 10, 20); //increase size x5 double
+//  ////This is to draw top to horizontal
+//  //line(0, 10, 20, 10); //
+//  ////This is the second one so we can capture the growth
+//  //line(44, 0, 4 4, 20);
+//  //line(34, 10, 54, 10);
+//  }
+//}
